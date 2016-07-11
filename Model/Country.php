@@ -16,12 +16,6 @@ class Country
 
     /**
      * @var string $name
-     * @Serializer\Groups({"details", "filter"})
-     */
-    protected $name;
-
-    /**
-     * @var string $name
      * @Serializer\Groups({"details"})
      */
     protected $isoCode;
@@ -54,25 +48,6 @@ class Country
         return $this->id;
     }
 
-    /**
-     * Set name
-     *
-     * @param string $name
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
 
     /**
      * Set priority

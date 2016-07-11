@@ -15,7 +15,7 @@ class CountryAdmin extends Admin
     protected $datagridValues = array(
         '_page' => 1,
         '_sort_order' => 'ASC', // sort direction
-        '_sort_by' => 'name' // field name
+        '_sort_by' => 'isoCode' // field name
     );
 
     protected function configureRoutes(RouteCollection $collection)
@@ -26,7 +26,7 @@ class CountryAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-                ->addIdentifier('name', null, array(
+                ->addIdentifier('getName', null, array(
                     'label' => $this->trans('name', array(), 'location-bundle')
                 ))
                 ->addIdentifier('isoCode', null, array(
@@ -46,7 +46,7 @@ class CountryAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-                ->add('name', null, array('label' => $this->trans('name', array(), 'location-bundle')))
+//                ->add('name', null, array('label' => $this->trans('name', array(), 'location-bundle')))
                 ->add('enabled', null, array(
                     'label' => $this->trans('enabled', array(), 'location-bundle'),
                     'editable' => true
@@ -57,7 +57,7 @@ class CountryAdmin extends Admin
     protected function configureShowField(ShowMapper $showMapper)
     {
         $showMapper
-                ->add('name', null, array('label' => $this->trans('name', array(), 'location-bundle')))
+                ->add('getName', null, array('label' => $this->trans('name', array(), 'location-bundle')))
                 ->add('isoCode', null, array(
                     'label' => $this->trans('iso.code', array(), 'location-bundle')
                 ))
@@ -72,7 +72,7 @@ class CountryAdmin extends Admin
     {
 
         $formMapper
-                ->add('name', null, array('label' => $this->trans('name', array(), 'location-bundle')))
+                ->add('translations', 'a2lix_translations', array('label' => $this->trans('name', array(), 'location-bundle')))
                 ->add('isoCode', null, array(
                     'label' => $this->trans('iso.code', array(), 'location-bundle')
                 ))
