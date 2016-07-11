@@ -4,7 +4,6 @@
     <id name="id" type="integer" column="id">
       <generator strategy="IDENTITY"/>
     </id>
-    <field name="name" type="string" column="name" length="255" precision="0" scale="0" nullable="false"/>
     <field name="isoCode" type="string" column="iso_code" length="2" precision="0" scale="0" nullable="false"/>
     <field name="enabled" type="boolean" column="enabled" precision="0" scale="0" nullable="false"/>
     <field name="priority" type="integer" column="priority" nullable="true"/>
